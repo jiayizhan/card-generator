@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+
+    <script defer src="script.js" type="text/javascript"></script> 
+
+    <link rel="icon" href="img/favicon.png" type="image/png">
+    <title>Card Generator</title>
+
+</head>
+<body>
+    <div class="main-bg">
+        <video loop muted id="main-bg-video">
+            <source src="video/main-bg.mp4" type="video/mp4">
+        </video>
+
+        <button id="btn-main-bg-video">
+            <img src="img/pause.png" alt="Pause">
+        </button>
+
+        <div class="menu animation" id="menu" onmouseover="setAnimation(this)">
+            <div class="timeline" id="timeline"></div>
+
+            <h3 class="title">Card Generator</h3>
+            <ul>
+                <li><button class="link-btn" onclick="alert('Yo! this feature is now not avaible, U may try again later ;)')">Generate a card</button></li>
+                <li><button class="link-btn" onclick="enter_page('card-builder')">Build a card step by step</button></li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="card-builder">
+        <div class="main_section">
+            <button onclick="exit_page('card-builder')" class="esci">&#x2715;</button>
+
+            <section class="view">
+                <h3 class="title">Result:</h3>
+                <img src="img/PNG-cards/back.jpg" alt="Error" class="result" id="result">
+            </section>
+            <section class="action">
+                <div class="process">
+                    <div id="process__line"></div>
+                </div>
+                <div class="choice" id="choice">
+                    <div class="choice__title" id="choice__title">
+                        let's start with the choice of the color.
+                    </div>
+                    <div class="choice__option" id="color">
+                        <div class="option" onclick="build('RED')">RED</div>
+                        <div class="option" onclick="build('BLACK')">BLACK</div>
+                    </div>
+                    <div class="choice__option" id="RED">
+                        <div class="option">Hearts <span style="color: red;" class="suits">♥</span></div>
+                        <div class="option">Diamonds <span style="color: red;" class="suits">♦</span></div>
+                    </div>
+                    <div class="choice__option" id="BLACK">
+                        <div class="option">Spades <span class="suits">♠</span></div>
+                        <div class="option">Clubs <span class="suits">♣</span></div>
+                    </div>
+                    
+                    <div class="choice__option" id="kind">
+                        <div class="option">Low numbers [A, 5]</div>
+                        <div class="option">High numbers [6, 10]</div>
+                        <div class="option">Face cards {J, Q, K}</div>
+                    </div>
+
+                    <div class="choice__option" id="value"></div>
+
+                    <div class="choice__option" id="submit">
+                        <div class="option">
+                            Wanna change something?
+                            <button onclick="choose_suit()">Suit</button>
+                            <button onclick="build('kind')">Value</button>
+                        </div>
+                        
+                        <div class="option">Otherwise: <button class="btn-submit" onclick="show_final_card()">Confirm</button></div>
+                    </div>
+
+                    <div class="choice__option" id="new_card">
+                        <div class="option" onclick="reset_build()">Generate a new card</div>
+                    </div>
+                    
+                </div>
+            </section>
+        </div>
+    </div>
+    
+
+</body>
+</html>
