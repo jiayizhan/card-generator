@@ -19,10 +19,10 @@ main_video.addEventListener('click', (e) => {
 
 btn_main_video.addEventListener('click', (e) => checkVideoStatus())
 
-function createImg(src, alt='...'){
+function createImg(src){
     let img = document.createElement('img')
     img.src = src
-    img.alt = alt
+    img.alt = ''
     return img
 }
 
@@ -34,14 +34,14 @@ function toggle_main_bg_video(){
 
     if(main_video.paused){
         main_video.play()
-        btn_main_video.appendChild(createImg('img/pause.png', 'Pause'))
+        btn_main_video.appendChild(createImg('img/pause.png'))
         let timeline = document.getElementById('timeline')
         setInterval(() => {
             timeline.style.height = (((main_video.currentTime / main_video.duration) * 100) % 101).toString() + "%"
         }, 50)
     }else{
         main_video.pause()
-        btn_main_video.appendChild(createImg('img/play.png', 'Play'))
+        btn_main_video.appendChild(createImg('img/play.png'))
     }
 
     return main_video.paused
