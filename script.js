@@ -99,12 +99,12 @@ function exit_page(id){
 var changes = false
 
 const titles = {
-    'color': 'let\'s start with the choice of the color.',
-    'RED': 'Choose the suit.',
-    'BLACK': 'Choose the suit.',
-    'kind': 'Choose the kind',
-    'value': 'Choose the value',
-    'submit': 'Final card: ',
+    'color': 'let\'s start with the color of suits.',
+    'RED': 'Which one?.',
+    'BLACK': 'Which one?',
+    'kind': 'Now please choose the type of card.',
+    'value': '...at last the value:',
+    'submit': 'The card you guys built: ',
     'new_card':''
 }
 
@@ -198,5 +198,3 @@ window.onload = () => {
     toggle_main_bg_video()
     reset_build()
 }
-
-
