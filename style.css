@@ -173,7 +173,7 @@ body{
     justify-content: space-around;
 }
 
-.menu > ul li{width: 28ch;}
+.menu > ul li{width: 75%;}
 
 .timeline{
     height: 40%;
